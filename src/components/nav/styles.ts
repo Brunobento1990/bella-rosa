@@ -3,13 +3,14 @@ import styled from "styled-components";
 export const ContainerMain = styled.div`
   position: fixed;
   bottom: 0;
-  background-color: #d3d3d3;
+  background-color: #dddddd;
   width: 100%;
-  height: 70px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
+
 export const Nav = styled.ul`
   width: 100%;
   height: 100%;
@@ -17,6 +18,7 @@ export const Nav = styled.ul`
   display: flex;
   align-items: center;
   justify-content: center;
+  left: -25px;
 `;
 
 export const NavLi = styled.li`
@@ -33,10 +35,6 @@ export const Text = styled(styled.span``)<{ display: string; color: string }>`
   display: ${(props) => props.display};
   color: ${(props) => props.color};
   margin-top: 13px;
-  background-color: azure;
-  height: 25px;
-  width: 80px;
-  border-radius: 18px;
   text-align: center;
 `;
 
@@ -51,8 +49,8 @@ export const ContainerIcon = styled(styled.div``)<{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   background-color: ${(props) => props.backGroud};
   position: absolute;
   top: ${(props) => props.top};

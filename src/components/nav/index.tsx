@@ -54,34 +54,3 @@ export default function NavBottomNavigation() {
     </S.ContainerMain>
   );
 }
-
-{
-  /* <Paper
-      sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
-      elevation={3}
-    >
-      <BottomNavigation
-        showLabels
-        value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue);
-        }}
-      >
-        <BottomNavigationAction 
-            label="Recents"
-            icon={<RestoreIcon sx={{color : themeApp.colors.pink}} />} 
-            sx={{color : themeApp.colors.pink}}
-        />
-        <BottomNavigationAction 
-            label="Favoritos" 
-            sx={{color : themeApp.colors.pink}}
-            icon={<FavoriteIcon sx={{color : themeApp.colors.pink}} />} 
-        />
-        <BottomNavigationAction 
-            label="Nearby" 
-            icon={<LocationOnIcon sx={{color : themeApp.colors.pink}} />} 
-            sx={{color : themeApp.colors.pink}}
-        />
-      </BottomNavigation>
-    </Paper> */
-}
