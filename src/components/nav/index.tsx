@@ -38,7 +38,7 @@ export default function NavBottomNavigation() {
               backGroud={
                 item.path === path ? themeApp.colors.pink : "transparent"
               }
-              top={item.path === path ? "-43px" : "0"}
+              top={item.path === path ? "-33px" : "0"}
               borderRadius={item.path === path ? "50%" : "0"}
               border={item.path === path ? "5px solid #f3f2f2" : "0"}
               onClick={() => navigate(item.path)}
