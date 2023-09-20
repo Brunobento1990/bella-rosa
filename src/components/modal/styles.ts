@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { styled } from "styled-components";
 
 export const ContainerModal = styled.div`
@@ -14,7 +15,7 @@ export const ContainerModal = styled.div`
     transition: 1s ease-in-out 1s;
 `
 
-export const ContainerMain = styled.div`
+export const ContainerAnimetion = styled(motion.div)`
     width: 90%;
     height: 200px;
     max-height: 80%;
@@ -25,11 +26,30 @@ export const ContainerMain = styled.div`
     background-color: white;
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-    transition: 1s ease-in-out 1s;
 `
 
-export const ContainerHeader =  styled(styled.div``)<{borderBotton : string}>`
+export const ContainerHeader = styled(styled.div``) <{ borderBotton: string }>`
     width: 90%;
-    height: 50px;
-    border-bottom: ${(props) => `"solid 1px" ${props.borderBotton}`};
+    height: 45px;
+    border-bottom: ${(props) => `solid 1px ${props.borderBotton}`};
+    display:flex;
+    align-items: center;
+    justify-content:space-between;
+`
+
+export const ContainerFooter = styled(styled.div``) <{ borderBotton: string }>`
+    width: 90%;
+    height: 45px;
+    border-top: ${(props) => `solid 1px ${props.borderBotton}`};
+    display:flex;
+    align-items: center;
+    justify-content:center;
+`
+
+export const ContainerMain = styled.div`
+    width: 90%;
+    height: 110px;
+    display:flex;
+    align-items: center;
+    justify-content:center;
 `

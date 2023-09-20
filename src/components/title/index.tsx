@@ -1,19 +1,21 @@
 import { useThemeApp } from '../../hooks/theme-app';
 import * as S from './styles'
 
-interface PropsTitle{
+interface PropsTitle {
     text: string,
-    heigth?:string,
+    heigth?: string,
+    fontSize?: string,
 }
 
-export function Title(props: PropsTitle){
+export function Title(props: PropsTitle) {
 
     const themeApp = useThemeApp();
 
-    return(
+    return (
         <S.Title
             fontFamily={themeApp.fontFamily.fontMain}
             heigth={props.heigth}
+            fontSize={props.fontSize}
         >
             {props.text}
         </S.Title>
