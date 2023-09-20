@@ -3,26 +3,29 @@ import { useThemeApp } from "../../hooks/theme-app";
 import HomeIcon from "@mui/icons-material/Home";
 import { useNavigate } from "react-router-dom";
 import CategoryIcon from '@mui/icons-material/Category';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import * as S from "./styles";
 
 const lis = [
   {
+    icon: <AccountCircleIcon />,
+    title: "Conta",
+    path: "/account",
+  },
+  {
     icon: <FavoriteIcon />,
     title: "Favoritos",
     path: "/favorites",
-    color: '#fb4343'
   },
   {
     icon: <HomeIcon />,
     title: "Home",
     path: "/",
-    color: 'rgb(241, 99, 210)'
   },
   {
     icon: <CategoryIcon />,
     title: "Categorias",
     path: "/categories",
-    color: '#5050b4'
   },
 ];
 
@@ -32,28 +35,27 @@ export default function NavBottomNavigation() {
   const navigate = useNavigate();
   const path = window.location.pathname;
 
-  function handleNavigate(color: string, path: string){
-    themeApp.handleColor(color)
+  function handleNavigate(path: string){
     navigate(path)
   }
 
   return (
-    <S.ContainerMain>
+    <S.ContainerMain
+      backGroundColor={themeApp.color.gray}
+    >
       <S.Nav>
         {lis.map((item, index) => (
           <S.NavLi key={index}>
             <S.ContainerIcon
-              backGroud={
-                item.path === path ? themeApp.color : "transparent"
-              }
+              backGroud={item.path === path ? themeApp.color.pink : "tranparent"}
               top={item.path === path ? "-33px" : "0"}
               borderRadius={item.path === path ? "50%" : "0"}
-              border={item.path === path ? "5px solid #f3f2f2" : "0"}
-              onClick={() => handleNavigate(item.color,item.path)}
+              border={item.path === path ? `5px solid ${themeApp.color.gray}` : "0"}
+              onClick={() => handleNavigate(item.path)}
             >
               {item.icon}
             </S.ContainerIcon>
-            <S.Text display={item.path === path ? "block" : "none"} color={themeApp.color}>
+            <S.Text display={item.path === path ? "block" : "none"} color={themeApp.color.pink}>
               {item.title}
             </S.Text>
           </S.NavLi>

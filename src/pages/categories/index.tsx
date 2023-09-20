@@ -1,12 +1,13 @@
 import { useThemeApp } from "../../hooks/theme-app";
 import { ContainerPage } from "../../layout/styles";
 
-export function Categories(){
+export function Categories() {
     const themeApp = useThemeApp();
-    return(
+    return (
         <ContainerPage
-            color={themeApp.color}
+            backGroudColor={themeApp.color.pink}
         >
+            <p>Categories</p>
         </ContainerPage>
     )
 }

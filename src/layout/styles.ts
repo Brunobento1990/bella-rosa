@@ -1,15 +1,14 @@
 import styled from "styled-components";
 
-export const ContainerMain = styled.div`
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-`
-
-export const ContainerPage = styled(styled.div``)<{color: string}>`
-    background-color: ${(props) => props.color};
+export const ContainerPage = styled(styled.div``) <{ backGroudColor: string }>`
+    background-color: ${(props) => props.backGroudColor};
     height: 100%;
+    min-height: 100vh;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap:10;
     margin-bottom: 75px;
 `

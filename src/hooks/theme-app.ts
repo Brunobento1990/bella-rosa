@@ -1,16 +1,13 @@
-import { useState } from "react";
-
-let handleColor: (color: string) => void;
-
 export function useThemeApp() {
-  const [color, setColor] = useState<string>("rgb(241, 99, 210)");
-
-  handleColor = function (colorParam: string) {
-    setColor(colorParam);
-  };
 
   return {
-    handleColor: (color: string) => handleColor(color),
-    color: color,
+    color: {
+      pink: "rgb(241, 99, 210)",
+      gray: "#e6e6e6",
+      red: '#e84f4f'
+    },
+    fontFamily:{
+      fontMain: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+    }
   };
 }

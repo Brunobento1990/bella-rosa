@@ -8,28 +8,23 @@ interface PropsSlider {
 export function Slider(props: PropsSlider) {
   const [active, setActive] = useState<number>(0);
 
-  function handleSlider(){
-    if(active === props.images.length){
-        setActive(0)
-    }else{
-        setActive(active + 1)
-    }
-  }
-
   setTimeout(() => {
-    handleSlider()
-  },2000)
+
+    if (active === (props.images.length - 1)) {
+      setActive(0)
+    } else {
+      setActive(active + 1)
+    }
+  }, 2000)
 
   return (
     <Box
       component="img"
       sx={{
-        height: 350,
-        display: "block",
-        overflow: "hidden",
+        height: 200,
+        top: 0,
+        right: 0,
         width: "100%",
-        borderRadius: 2,
-        marginTop: -5,
       }}
       src={props.images[active]}
     />

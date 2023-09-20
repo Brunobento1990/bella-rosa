@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-export const ContainerMain = styled.div`
+export const ContainerMain = styled(styled.div``)<{backGroundColor: string}> `
   position: fixed;
   bottom: 0;
-  background-color: #dddddd;
+  background-color: ${(props) => props.backGroundColor};
   width: 100%;
   height: 60px;
   display: flex;
@@ -56,5 +56,5 @@ export const ContainerIcon = styled(styled.div``)<{
   top: ${(props) => props.top};
   border-radius: ${(props) => props.borderRadius};
   border: ${(props) => props.border};
-  transition: 0.3s ease-out;
+  transition: 1s ease-in-out 1s;
 `;
