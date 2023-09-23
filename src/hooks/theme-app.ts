@@ -3,7 +3,7 @@ export function useThemeApp() {
   return {
     color: {
       pink: "rgb(241, 99, 210)",
-      gray: "#e6e6e6",
+      gray: "#eeebeb",
       red: '#e84f4f'
     },
     fontFamily:{

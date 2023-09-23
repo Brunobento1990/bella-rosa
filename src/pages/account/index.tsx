@@ -11,7 +11,7 @@ export function Account(){
 
     return (
         <ContainerPage
-            backGroudColor={themeApp.color.pink}
+            backGroudColor={themeApp.color.gray}
         >
             <p>Account</p>
             <button onClick={() => {

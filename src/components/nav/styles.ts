@@ -1,14 +1,15 @@
 import styled from "styled-components";
 
-export const ContainerMain = styled(styled.div``)<{backGroundColor: string}> `
+export const ContainerMain = styled.div`
   position: fixed;
   bottom: 0;
-  background-color: ${(props) => props.backGroundColor};
+  background-color: white;
   width: 100%;
   height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-top: solid 1px pink;
 `;
 
 export const Nav = styled.ul`

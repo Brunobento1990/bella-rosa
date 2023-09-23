@@ -6,10 +6,9 @@ export function Favorities() {
 
     return (
         <ContainerPage
-            backGroudColor={themeApp.color.pink}
+            backGroudColor={themeApp.color.gray}
         >
             <p>Favoritos</p>
-            {/* <Slider images={images} /> */}
         </ContainerPage>
     )
 }

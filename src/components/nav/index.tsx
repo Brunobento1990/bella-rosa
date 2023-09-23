@@ -40,9 +40,7 @@ export default function NavBottomNavigation() {
   }
 
   return (
-    <S.ContainerMain
-      backGroundColor={themeApp.color.gray}
-    >
+    <S.ContainerMain>
       <S.Nav>
         {lis.map((item, index) => (
           <S.NavLi key={index}>

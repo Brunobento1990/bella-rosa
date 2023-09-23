@@ -1,8 +1,9 @@
 import { Box } from "@mui/material";
 import { useState } from "react";
+import { Banner } from "../../interfaces/banner";
 
 interface PropsSlider {
-  images: any[];
+  banner: Banner[];
 }
 
 export function Slider(props: PropsSlider) {
@@ -10,7 +11,7 @@ export function Slider(props: PropsSlider) {
 
   setTimeout(() => {
 
-    if (active === (props.images.length - 1)) {
+    if (active === (props.banner.length - 1)) {
       setActive(0)
     } else {
       setActive(active + 1)
@@ -25,8 +26,9 @@ export function Slider(props: PropsSlider) {
         top: 0,
         right: 0,
         width: "100%",
+        transition:'1s ease-in-out 1s'
       }}
-      src={props.images[active]}
+      src={`data:image/jpeg;base64,${props.banner[active]?.photograph ?? ''}`}
     />
   );
 }

@@ -10,5 +10,5 @@ export const ContainerPage = styled(styled.div``) <{ backGroudColor: string }>`
     justify-content: center;
     flex-direction: column;
     gap:10;
-    margin-bottom: 75px;
+    margin-bottom: 58px;
 `
