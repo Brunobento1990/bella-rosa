@@ -6,11 +6,14 @@ import { Slider } from '../../sections/home/slider'
 import { Banner } from '../../interfaces/banner';
 import { ProductHighlight } from '../../sections/home/product-highlight';
 import { Product } from '../../interfaces/product';
+import { IPromotion } from '../../interfaces/promotion';
+import { SectionPromotion } from '../../sections/home/promotion';
 
 export function Home() {
 
     const [banners, setBannres] =useState<Banner[]>([]);
     const [products, setProducts] =useState<Product[]>([]);
+    const [promotions, setPromotions] =useState<IPromotion[]>([]);
     const themeApp = useThemeApp();
     const api = useApi();
 
@@ -18,11 +21,15 @@ export function Home() {
         const init = async () => {
             const responseBanner = await api.get("list-banner");
             const responseProduct = await api.get("list-product");
+            const responsePromotion = await api.get("list-promotion")
             if(responseBanner){
                 setBannres(responseBanner)
             }
             if(responseProduct){
                 setProducts(responseProduct)
+            }
+            if(responsePromotion){
+                setPromotions(responsePromotion)
             }
         }
 
@@ -35,6 +42,7 @@ export function Home() {
         >
             <Slider banner={banners} />
             <ProductHighlight products={products}/>
+            <SectionPromotion promotion={promotions} />
         </ContainerPage>
     )
 }

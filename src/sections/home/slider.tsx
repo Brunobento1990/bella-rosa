@@ -16,7 +16,7 @@ export function Slider(props: PropsSlider) {
     } else {
       setActive(active + 1)
     }
-  }, 2000)
+  }, 3000)
 
   return (
     <Box
@@ -25,8 +25,7 @@ export function Slider(props: PropsSlider) {
         height: 200,
         top: 0,
         right: 0,
-        width: "100%",
-        transition:'1s ease-in-out 1s'
+        width: "100%"
       }}
       src={`data:image/jpeg;base64,${props.banner[active]?.photograph ?? ''}`}
     />
