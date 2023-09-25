@@ -1,8 +1,8 @@
 import axios from "axios";
 
 function getSocket() {
-    const baseUrl = "https://localhost:44345/api/"
-    //const baseUrl = "https://trevo.space/api/"
+    //const baseUrl = "https://localhost:44345/api/"
+    const baseUrl = "https://trevo.space/api/"
     const localAuth = localStorage.getItem('token');
     const auth = localAuth ? localAuth : '';
 
