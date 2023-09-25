@@ -2,6 +2,7 @@ import { Card } from "../../../components/card";
 import { Title } from "../../../components/title";
 import { ItemPromotion } from "../../../interfaces/items-promotion";
 import { IPromotion } from "../../../interfaces/promotion";
+import { invertDate } from "../../../utils/invertDate";
 import * as S from "./styles";
 
 interface PropsPromotion {
@@ -16,7 +17,7 @@ export function SectionPromotion(props: PropsPromotion) {
         <>
           <S.BoxText>
             <p key={index}>{promo.description}</p>
-            {promo.dt_Expiration && <Title text={`Expira em ${promo.dt_Expiration}`} />}
+            {promo.dt_Expiration && <Title text={`Expira em ${invertDate(promo.dt_Expiration)}`} />}
           </S.BoxText>
           {promo.itemsPromotion.map((item: ItemPromotion, i) => (
             <Card product={item.product} key={i} />
