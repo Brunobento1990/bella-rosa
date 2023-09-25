@@ -3,5 +3,5 @@ export function invertDate(date?: string): string {
 
   var arrayDt = date.split("-");
 
-  return `${arrayDt[2].replace("-", "/").slice(0, 3)}${arrayDt[1].replace("-","")}${arrayDt[0].replace("-", "/")}`;
+  return `${arrayDt[2].replace("-", "/").slice(0, 2)}/${arrayDt[1].replace("-","")}/${arrayDt[0].replace("-", "/")}`;
 }
