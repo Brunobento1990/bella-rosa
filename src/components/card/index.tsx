@@ -35,7 +35,7 @@ export function Card(props: CardProps) {
                         <Title text={props.product?.color} />
                     }
                     {props.product?.pricePromotion ?
-                        <Title text={`De R$: ${props.product.price} por R$: ${props.product?.pricePromotion}`} /> :
+                        <Title text={`De R$: ${props.product.price} por R$: ${props.product?.pricePromotion}`} textDecoration='line-through' /> :
                         <Title text={`R$: ${props.product.price}`} />
                     }
                 </S.ContainerTitle>

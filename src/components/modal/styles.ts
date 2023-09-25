@@ -13,46 +13,66 @@ export const ContainerModal = styled.div`
   display: flex;
   position: absolute;
   transition: 1s ease-in-out 1s;
-  animation: teste .5s alternate;
+  animation: teste 0.5s alternate;
 
   @keyframes teste {
     0% {
       bottom: -100%;
     }
     100% {
-        bottom: 0%;
+      bottom: 0%;
     }
   }
 `;
 
 export const ContainerText = styled.div`
-    width: 58%;
-    height: 100%;
-    display: flex;
-    margin-left: 10px;
-    align-items: start;
-    justify-content: start;
-    flex-direction: column;
-`
+  width: 58%;
+  height: 100%;
+  display: flex;
+  margin-left: 10px;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+`;
 
-export const ButtonQuantity = styled.button`
-    width: 35px;
-    height: 35px;   
-`
+export const ButtonQuantity = styled(styled.button``)<{
+  backGroundColor: string;
+}>`
+  width: 35px;
+  height: 35px;
+  background-color: ${(props) => props.backGroundColor};
+`;
+
+export const ButtonDiv = styled(styled.button``)<{
+  backGroundColor: string;
+  borderColor: string;
+}>`
+  width: 35px;
+  height: 35px;
+  background-color: ${(props) => props.backGroundColor};
+  border-top: ${(props) => `solid 1px ${props.borderColor}`};
+  border-bottom: ${(props) => `solid 1px ${props.borderColor}`};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 export const BoxButton = styled.div`
-    width: 100%;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 export const img = styled.img`
-    width: 38%;
-    height: 90%;
-    border-radius: 5px;
-`
+  width: 38%;
+  height: 90%;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 export const ContainerAnimetion = styled.div`
   width: 90%;
