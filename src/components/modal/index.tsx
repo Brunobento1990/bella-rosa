@@ -5,6 +5,8 @@ import { useThemeApp } from "../../hooks/theme-app";
 import { Title } from "../title";
 import { Button } from "@mui/material";
 import { Product } from "../../interfaces/product";
+//import RemoveIcon from '@mui/icons-material/Remove';
+//import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 let handleModal: (open: boolean, productParam: Product | null) => void;
 
@@ -44,6 +46,14 @@ function Modal(): ReactElement | null {
               <Title text={`R$: ${product?.price}`} />
             )}
           </S.ContainerText>
+          {/* <S.BoxButton>
+            <S.ButtonQuantity>
+                <RemoveIcon />
+            </S.ButtonQuantity>
+            <S.ButtonQuantity>
+                <AddCircleIcon />
+            </S.ButtonQuantity>
+          </S.BoxButton> */}
         </S.ContainerMain>
         <S.ContainerFooter borderBotton={themeApp.color.gray}>
           <Button sx={{ color: themeApp.color.pink }}>Adicionar</Button>

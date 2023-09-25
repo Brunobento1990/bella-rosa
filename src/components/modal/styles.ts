@@ -35,6 +35,19 @@ export const ContainerText = styled.div`
     flex-direction: column;
 `
 
+export const ButtonQuantity = styled.button`
+    width: 35px;
+    height: 35px;   
+`
+
+export const BoxButton = styled.div`
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
+
 export const img = styled.img`
     width: 38%;
     height: 90%;
