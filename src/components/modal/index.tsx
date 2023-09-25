@@ -3,7 +3,7 @@ import { ReactElement, useState } from "react";
 import * as S from "./styles";
 import { useThemeApp } from "../../hooks/theme-app";
 import { Title } from "../title";
-import { Button } from "@mui/material";
+import { Button, SvgIcon } from "@mui/material";
 import { Product } from "../../interfaces/product";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
@@ -77,7 +77,9 @@ function Modal(): ReactElement | null {
                 borderBottomLeftRadius: "3px",
               }}
             >
-              <RemoveIcon />
+              <SvgIcon fontSize="small">
+                <RemoveIcon />
+              </SvgIcon>
             </S.ButtonQuantity>
             <S.ButtonDiv
               borderColor={themeApp.color.pink}
@@ -93,7 +95,9 @@ function Modal(): ReactElement | null {
                 borderBottomRightRadius: "3px",
               }}
             >
-              <AddCircleIcon />
+              <SvgIcon fontSize="small">
+                <AddCircleIcon />
+              </SvgIcon>
             </S.ButtonQuantity>
           </S.ContainerMainButton>
         </S.ContainerFooter>
