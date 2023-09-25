@@ -7,4 +7,6 @@ export const BoxText = styled.div`
     justify-content: center;
     flex-direction: column;
     gap: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
 `
