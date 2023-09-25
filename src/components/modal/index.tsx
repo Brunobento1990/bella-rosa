@@ -99,7 +99,7 @@ function Modal(): ReactElement | null {
               </SvgIcon>
             </S.ButtonQuantity>
           </S.ContainerMainButton>
-          <Button sx={{ color: themeApp.color.pink, fontSize: "10px" }}>
+          <Button sx={{ color: themeApp.color.pink, fontSize: "10px", width:'75px' }}>
             Adicionar
           </Button>
         </S.ContainerFooter>

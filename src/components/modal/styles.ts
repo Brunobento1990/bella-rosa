@@ -102,7 +102,7 @@ export const ContainerHeader = styled(styled.div``)<{ borderBotton: string }>`
 `;
 
 export const ContainerFooter = styled(styled.div``)<{ borderBotton: string }>`
-  width: 90%;
+  width: 100%;
   height: 60px;
   border-top: ${(props) => `solid 1px ${props.borderBotton}`};
   display: flex;
@@ -120,7 +120,7 @@ export const ContainerMain = styled.div`
 
 export const ContainerMainButton = styled.div`
   width: 100%;
-  height: 100%;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
