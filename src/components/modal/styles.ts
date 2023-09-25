@@ -112,8 +112,17 @@ export const ContainerFooter = styled(styled.div``)<{ borderBotton: string }>`
 
 export const ContainerMain = styled.div`
   width: 90%;
-  height: 110px;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+export const ContainerMainButton = styled.div`
+  width: 90%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 `;

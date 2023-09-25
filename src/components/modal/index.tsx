@@ -49,44 +49,47 @@ function Modal(): ReactElement | null {
             src={`data:image/jpeg;base64,${product?.photograph ?? ""}`}
             alt={product?.description}
           />
-          <S.ContainerText>
-            <Title text={product?.description ?? ""} />
-            {product?.pricePromotion ? (
-              <Title
-                text={`De R$: ${product.price} por R$: ${product?.pricePromotion}`}
-              />
-            ) : (
-              <Title text={`R$: ${product?.price}`} />
-            )}
-          </S.ContainerText>
-          <S.BoxButton>
-            <S.ButtonQuantity
-              backGroundColor={themeApp.color.pink}
-              onClick={() => handleQuantity(false)}
-              style={{
-                borderTopLeftRadius: "2px",
-                borderBottomLeftRadius: "2px",
-              }}
-            >
-              <RemoveIcon />
-            </S.ButtonQuantity>
-            <S.ButtonDiv
-              borderColor={themeApp.color.pink}
-              backGroundColor={themeApp.color.gray}
-            >
-              {quantity}
-            </S.ButtonDiv>
-            <S.ButtonQuantity
-              backGroundColor={themeApp.color.pink}
-              onClick={() => handleQuantity(true)}
-              style={{
-                borderTopRightRadius: "2px",
-                borderBottomRightRadius: "2px",
-              }}
-            >
-              <AddCircleIcon />
-            </S.ButtonQuantity>
-          </S.BoxButton>
+          <S.ContainerMainButton>
+            <S.ContainerText>
+              <Title text={product?.description ?? ""} />
+              {product?.pricePromotion ? (
+                <>
+                  <Title text={`De R$: ${product.price}`} />
+                  <Title text={`por R$: ${product?.pricePromotion}`} />
+                </>
+              ) : (
+                <Title text={`R$: ${product?.price}`} />
+              )}
+            </S.ContainerText>
+            <S.BoxButton>
+              <S.ButtonQuantity
+                backGroundColor={themeApp.color.pink}
+                onClick={() => handleQuantity(false)}
+                style={{
+                  borderTopLeftRadius: "3px",
+                  borderBottomLeftRadius: "3px",
+                }}
+              >
+                <RemoveIcon />
+              </S.ButtonQuantity>
+              <S.ButtonDiv
+                borderColor={themeApp.color.pink}
+                backGroundColor={themeApp.color.gray}
+              >
+                {quantity}
+              </S.ButtonDiv>
+              <S.ButtonQuantity
+                backGroundColor={themeApp.color.pink}
+                onClick={() => handleQuantity(true)}
+                style={{
+                  borderTopRightRadius: "3px",
+                  borderBottomRightRadius: "3px",
+                }}
+              >
+                <AddCircleIcon />
+              </S.ButtonQuantity>
+            </S.BoxButton>
+          </S.ContainerMainButton>
         </S.ContainerMain>
         <S.ContainerFooter borderBotton={themeApp.color.gray}>
           <Button sx={{ color: themeApp.color.pink }}>Adicionar</Button>
