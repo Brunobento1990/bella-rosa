@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { styled } from "styled-components";
 
 export const ContainerModal = styled.div`
@@ -68,7 +67,7 @@ export const img = styled.img`
 
 export const ContainerAnimetion = styled.div`
   width: 90%;
-  height: 200px;
+  height: 400px;
   max-height: 80%;
   display: flex;
   align-items: center;
