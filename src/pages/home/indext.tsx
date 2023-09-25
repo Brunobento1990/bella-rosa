@@ -38,7 +38,8 @@ export function Home() {
 
     return (
         <ContainerPage
-            backGroudColor={themeApp.color.gray}
+            backGroudColorTo={themeApp.color.pink}
+            backGroudColorFrom={themeApp.color.gray}
         >
             <Slider banner={banners} />
             <ProductHighlight products={products}/>

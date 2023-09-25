@@ -9,7 +9,7 @@ export function SectionPromotion(props: PropsPromotion) {
 
     return (
         <>
-            <Title text="Promoç~es" heigth='20px' fontSize='18px' />
+            <Title text="Promoções" heigth='20px' fontSize='18px' />
             {props.promotion?.map((promo, index) => (
                 <p key={index}>{promo.description}</p>
             ))

@@ -5,7 +5,8 @@ export function Categories() {
     const themeApp = useThemeApp();
     return (
         <ContainerPage
-            backGroudColor={themeApp.color.gray}
+            backGroudColorTo={themeApp.color.pink}
+            backGroudColorFrom={themeApp.color.gray}
         >
             <p>Categories</p>
         </ContainerPage>

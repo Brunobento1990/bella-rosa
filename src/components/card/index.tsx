@@ -5,6 +5,7 @@ import * as S from './styles'
 import { Button, SvgIcon } from '@mui/material';
 import { Title } from '../title';
 import { Product } from '../../interfaces/product';
+import { useModal } from '../modal';
 
 interface CardProps {
     product: Product
@@ -13,6 +14,7 @@ interface CardProps {
 export function Card(props: CardProps) {
 
     const themeApp = useThemeApp();
+    const modal = useModal();
 
     return (
         <S.ContainerCard>
@@ -50,6 +52,7 @@ export function Card(props: CardProps) {
                             gap: '10px',
                             fontSize:'12px'
                         }}
+                        onClick={() => modal.show(props.product)}
                     >
                         Adicionar
                     </Button>

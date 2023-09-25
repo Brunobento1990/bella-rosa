@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-export const ContainerPage = styled(styled.div``) <{ backGroudColor: string }>`
+export const ContainerPage = styled(styled.div``) <{ backGroudColorTo: string , backGroudColorFrom: string}>`
+    background-color: ${(props) => props.backGroudColorFrom};
     height: 100%;
     min-height: 100vh;
     width: 100%;
@@ -10,14 +11,14 @@ export const ContainerPage = styled(styled.div``) <{ backGroudColor: string }>`
     flex-direction: column;
     gap:10;
     margin-bottom: 58px;
-    animation: pulse 5s alternate;
+    animation: pulse 3s alternate;
 
     @keyframes pulse {
     0% {
-      background-color: #001F3F;
+      background-color: ${(props) => props.backGroudColorTo};
     }
     100% {
-      background-color: #FF4136;
+      background-color: ${(props) => props.backGroudColorFrom};
     }
   }
 `
