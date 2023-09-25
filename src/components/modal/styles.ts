@@ -107,7 +107,7 @@ export const ContainerFooter = styled(styled.div``)<{ borderBotton: string }>`
   border-top: ${(props) => `solid 1px ${props.borderBotton}`};
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 `;
 
 export const ContainerMain = styled.div`
