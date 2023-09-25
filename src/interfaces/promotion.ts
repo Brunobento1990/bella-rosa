@@ -1,11 +1,9 @@
-import { Product } from "./product"
+import { ItemPromotion } from "./items-promotion";
 
 export interface IPromotion {
-    description: string,
-    price: number,
-    productId: string,
-    product: Product,
-    dt_Expiration: string,
-    id: string,
-    number: number
+  description: string;
+  dt_Expiration: string;
+  id: string;
+  number: number;
+  itemsPromotion: ItemPromotion[];
 }
