@@ -67,7 +67,6 @@ function Modal(): ReactElement | null {
           </S.ContainerMainButton>
         </S.ContainerMain>
         <S.ContainerFooter borderBotton={themeApp.color.gray}>
-          <Button sx={{ color: themeApp.color.pink }}>Adicionar</Button>
           <S.ContainerMainButton>
             <S.ButtonQuantity
               backGroundColor={themeApp.color.pink}
@@ -100,6 +99,9 @@ function Modal(): ReactElement | null {
               </SvgIcon>
             </S.ButtonQuantity>
           </S.ContainerMainButton>
+          <Button sx={{ color: themeApp.color.pink, fontSize: "10px" }}>
+            Adicionar
+          </Button>
         </S.ContainerFooter>
       </S.ContainerAnimetion>
     </S.ContainerModal>

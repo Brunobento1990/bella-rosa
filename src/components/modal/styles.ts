@@ -67,7 +67,7 @@ export const img = styled.img`
 
 export const ContainerAnimetion = styled.div`
   width: 90%;
-  height: 400px;
+  height: 200px;
   max-height: 80%;
   display: flex;
   align-items: center;
@@ -103,7 +103,7 @@ export const ContainerHeader = styled(styled.div``)<{ borderBotton: string }>`
 
 export const ContainerFooter = styled(styled.div``)<{ borderBotton: string }>`
   width: 90%;
-  height: 45px;
+  height: 60px;
   border-top: ${(props) => `solid 1px ${props.borderBotton}`};
   display: flex;
   align-items: center;
@@ -119,7 +119,7 @@ export const ContainerMain = styled.div`
 `;
 
 export const ContainerMainButton = styled.div`
-  width: 90%;
+  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
