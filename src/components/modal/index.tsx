@@ -60,7 +60,14 @@ function Modal(): ReactElement | null {
             )}
           </S.ContainerText>
           <S.BoxButton>
-            <S.ButtonQuantity backGroundColor={themeApp.color.pink} onClick={() => handleQuantity(false)}>
+            <S.ButtonQuantity
+              backGroundColor={themeApp.color.pink}
+              onClick={() => handleQuantity(false)}
+              style={{
+                borderTopLeftRadius: "2px",
+                borderBottomLeftRadius: "2px",
+              }}
+            >
               <RemoveIcon />
             </S.ButtonQuantity>
             <S.ButtonDiv
@@ -69,7 +76,14 @@ function Modal(): ReactElement | null {
             >
               {quantity}
             </S.ButtonDiv>
-            <S.ButtonQuantity backGroundColor={themeApp.color.pink} onClick={() => handleQuantity(true)}>
+            <S.ButtonQuantity
+              backGroundColor={themeApp.color.pink}
+              onClick={() => handleQuantity(true)}
+              style={{
+                borderTopRightRadius: "2px",
+                borderBottomRightRadius: "2px",
+              }}
+            >
               <AddCircleIcon />
             </S.ButtonQuantity>
           </S.BoxButton>

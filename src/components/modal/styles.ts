@@ -13,16 +13,6 @@ export const ContainerModal = styled.div`
   display: flex;
   position: absolute;
   transition: 1s ease-in-out 1s;
-  animation: teste 0.5s alternate;
-
-  @keyframes teste {
-    0% {
-      bottom: -100%;
-    }
-    100% {
-      bottom: 0%;
-    }
-  }
 `;
 
 export const ContainerText = styled.div`
@@ -41,6 +31,7 @@ export const ButtonQuantity = styled(styled.button``)<{
   width: 35px;
   height: 35px;
   background-color: ${(props) => props.backGroundColor};
+  border: none;
 `;
 
 export const ButtonDiv = styled(styled.button``)<{
@@ -55,6 +46,7 @@ export const ButtonDiv = styled(styled.button``)<{
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
 `;
 
 export const BoxButton = styled.div`
