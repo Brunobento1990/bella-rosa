@@ -7,6 +7,7 @@ import { Button, SvgIcon } from "@mui/material";
 import { Product } from "../../interfaces/product";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
+import { useCart } from "../../hooks/use-cart";
 
 let handleModal: (open: boolean, productParam: Product | null) => void;
 
@@ -15,6 +16,7 @@ function Modal(): ReactElement | null {
   const [product, setProdutct] = useState<Product>();
   const [quantity, setQuantity] = useState<number>(0);
   const themeApp = useThemeApp();
+  const cart = useCart();
 
   function handleQuantity(sum: boolean) {
     if (sum) {
@@ -35,23 +37,31 @@ function Modal(): ReactElement | null {
     setOpenModal(open);
   };
 
+  function handleAddCart() {
+    cart.setCart(product?.id ?? '', quantity)
+    setQuantity(0);
+    setOpenModal(false)
+  }
+
   if (!openModal) return null;
 
   return (
     <S.ContainerModal>
       <S.ContainerAnimetion>
         <S.ContainerHeader borderBotton={themeApp.color.gray}>
-          <Title text="Bella rosa" heigth="20px" fontSize="18px" />
-          <CloseIcon onClick={() => setOpenModal(false)} />
+          <Title text={product?.description ?? ''} heigth="20px" fontSize="16px" />
+          <CloseIcon onClick={() => {
+            setQuantity(0)
+            setOpenModal(false)
+          }} />
         </S.ContainerHeader>
         <S.ContainerMain>
           <S.img
             src={`data:image/jpeg;base64,${product?.photograph ?? ""}`}
             alt={product?.description}
           />
-          <S.ContainerMainButton>
+          <S.Container>
             <S.ContainerText>
-              <Title text={product?.description ?? ""} />
               {product?.pricePromotion ? (
                 <>
                   <Title
@@ -64,42 +74,44 @@ function Modal(): ReactElement | null {
                 <Title text={`R$: ${product?.price}`} />
               )}
             </S.ContainerText>
-          </S.ContainerMainButton>
+            <S.ContainerMainButton>
+              <S.ButtonQuantity
+                backGroundColor={themeApp.color.pink}
+                onClick={() => handleQuantity(false)}
+                style={{
+                  borderTopLeftRadius: "5px",
+                  borderBottomLeftRadius: "5px",
+                }}
+              >
+                <SvgIcon fontSize="small">
+                  <RemoveIcon sx={{ color:`${themeApp.color.gray}` }}/>
+                </SvgIcon>
+              </S.ButtonQuantity>
+              <S.ButtonDiv
+                borderColor={themeApp.color.pink}
+              >
+                {quantity}
+              </S.ButtonDiv>
+              <S.ButtonQuantity
+                backGroundColor={themeApp.color.pink}
+                onClick={() => handleQuantity(true)}
+                style={{
+                  borderTopRightRadius: "5px",
+                  borderBottomRightRadius: "5px",
+                }}
+              >
+                <SvgIcon fontSize="small">
+                  <AddCircleIcon sx={{ color:`${themeApp.color.gray}` }} />
+                </SvgIcon>
+              </S.ButtonQuantity>
+            </S.ContainerMainButton>
+          </S.Container>
         </S.ContainerMain>
         <S.ContainerFooter borderBotton={themeApp.color.gray}>
-          <S.ContainerMainButton>
-            <S.ButtonQuantity
-              backGroundColor={themeApp.color.pink}
-              onClick={() => handleQuantity(false)}
-              style={{
-                borderTopLeftRadius: "3px",
-                borderBottomLeftRadius: "3px",
-              }}
-            >
-              <SvgIcon fontSize="small">
-                <RemoveIcon />
-              </SvgIcon>
-            </S.ButtonQuantity>
-            <S.ButtonDiv
-              borderColor={themeApp.color.pink}
-              backGroundColor={themeApp.color.gray}
-            >
-              {quantity}
-            </S.ButtonDiv>
-            <S.ButtonQuantity
-              backGroundColor={themeApp.color.pink}
-              onClick={() => handleQuantity(true)}
-              style={{
-                borderTopRightRadius: "3px",
-                borderBottomRightRadius: "3px",
-              }}
-            >
-              <SvgIcon fontSize="small">
-                <AddCircleIcon />
-              </SvgIcon>
-            </S.ButtonQuantity>
-          </S.ContainerMainButton>
-          <Button sx={{ color: themeApp.color.pink, fontSize: "10px", width:'75px' }}>
+          <Button 
+            sx={{ color: themeApp.color.pink, fontSize: "10px", width: '75px' }}
+            onClick={handleAddCart}
+          >
             Adicionar
           </Button>
         </S.ContainerFooter>

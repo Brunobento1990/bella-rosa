@@ -19,6 +19,7 @@ export function AppRoutes() {
           <Route path="/account" element={<Layout><Account /></Layout>} />
           <Route path="/favorites" element={<Layout><Favorities /></Layout>} />
           <Route path="/categories" element={<Layout><Categories /></Layout>} />
+          <Route path="/categories-view/:id" element={<Layout><p>Categories view</p></Layout>} />
         </Routes>
       </AnimatePresence>
     </>

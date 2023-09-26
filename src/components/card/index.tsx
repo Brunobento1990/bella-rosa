@@ -54,7 +54,13 @@ export function Card(props: CardProps) {
               gap: "10px",
               fontSize: "12px",
             }}
-            onClick={() => modal.show(props.product)}
+            onClick={() => {
+              window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+              })
+              modal.show(props.product)
+            }}
           >
             Adicionar
           </Button>

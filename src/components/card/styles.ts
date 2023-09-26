@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 export const ContainerCard = styled.div`
     width: 95%;
-    height: 180px;
+    height: 160px;
     display: flex;
     gap: 4px;
     align-items: center;
@@ -21,13 +21,13 @@ export const img = styled.img`
 
 export const ContainerTitle = styled.div`
     display: flex;
-    height: 120px;
+    height: 125px;
     margin-left: 15px;
     width: 100%;
     align-items: start;
     justify-content: center;
     flex-direction: column;
-    margin-top: -20px;
+    margin-top: -8px;
 `
 
 export const ContainerFavorites = styled.div`

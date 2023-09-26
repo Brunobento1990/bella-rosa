@@ -9,7 +9,7 @@ interface PropsProductHighlight {
 export function ProductHighlight(props: PropsProductHighlight) {
     return (
         <>
-            <Title text="Produtos em destaque" heigth='20px' fontSize='18px' />
+            <Title text="Produtos em destaque" heigth='25px' fontSize='18px' />
             {props.products?.map((product, index) => (
                 <Card
                     product={product}

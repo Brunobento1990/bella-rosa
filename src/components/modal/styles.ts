@@ -4,7 +4,7 @@ export const ContainerModal = styled.div`
   width: 100%;
   height: 100%;
   min-height: 100vh;
-  z-index: 1000;
+  z-index: 1;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -15,37 +15,48 @@ export const ContainerModal = styled.div`
 `;
 
 export const ContainerText = styled.div`
-  width: 58%;
+  width: 80%;
   height: 100%;
   display: flex;
   margin-left: 10px;
   align-items: start;
-  justify-content: start;
+  justify-content: center;
   flex-direction: column;
 `;
 
-export const ButtonQuantity = styled(styled.button``)<{
+export const Container = styled.div`
+    width: 200px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+`
+
+export const ButtonQuantity = styled(styled.button``) <{
   backGroundColor: string;
 }>`
   width: 35px;
   height: 35px;
   background-color: ${(props) => props.backGroundColor};
   border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
-export const ButtonDiv = styled(styled.button``)<{
-  backGroundColor: string;
+export const ButtonDiv = styled(styled.div``) <{
   borderColor: string;
 }>`
   width: 35px;
-  height: 35px;
-  background-color: ${(props) => props.backGroundColor};
+  height: 33px;
   border-top: ${(props) => `solid 1px ${props.borderColor}`};
   border-bottom: ${(props) => `solid 1px ${props.borderColor}`};
   display: flex;
   align-items: center;
   justify-content: center;
-  border: none;
+  font-size: 16px;
+  font-weight: 700;
 `;
 
 export const BoxButton = styled.div`
@@ -57,8 +68,8 @@ export const BoxButton = styled.div`
 `;
 
 export const img = styled.img`
-  width: 38%;
-  height: 90%;
+  width: 100px;
+  height: 100px;
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -67,7 +78,7 @@ export const img = styled.img`
 
 export const ContainerAnimetion = styled.div`
   width: 90%;
-  height: 200px;
+  height: 250px;
   max-height: 80%;
   display: flex;
   align-items: center;
@@ -81,33 +92,29 @@ export const ContainerAnimetion = styled.div`
   @keyframes rotation {
     0% {
       opacity: 0;
-      width: 0px;
-      bottom: -50%;
     }
     100% {
       opacity: 1;
-      width: 90%;
-      bottom: 50%;
     }
   }
 `;
 
-export const ContainerHeader = styled(styled.div``)<{ borderBotton: string }>`
+export const ContainerHeader = styled(styled.div``) <{ borderBotton: string }>`
   width: 90%;
-  height: 45px;
+  height: 65px;
   border-bottom: ${(props) => `solid 1px ${props.borderBotton}`};
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
 
-export const ContainerFooter = styled(styled.div``)<{ borderBotton: string }>`
+export const ContainerFooter = styled(styled.div``) <{ borderBotton: string }>`
   width: 100%;
   height: 60px;
   border-top: ${(props) => `solid 1px ${props.borderBotton}`};
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 `;
 
 export const ContainerMain = styled.div`
@@ -123,5 +130,5 @@ export const ContainerMainButton = styled.div`
   height: 60px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: end;
 `;
