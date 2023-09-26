@@ -4,7 +4,7 @@ export const ContainerPage = styled(styled.div``) <{ backGroudColorTo: string , 
     background-color: ${(props) => props.backGroudColorFrom};
     height: 100%;
     margin-bottom: 9vh;
-    min-height: 100vh;
+    min-height: 91vh;
     width: 100%;
     display: flex;
     align-items: center;
