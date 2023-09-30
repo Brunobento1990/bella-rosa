@@ -13,6 +13,9 @@ export function Layout(props: PropsLayout) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0}}
+            style={{
+                overflow: 'hidden auto'
+            }}
         >
             <Header />
             {props.children}
