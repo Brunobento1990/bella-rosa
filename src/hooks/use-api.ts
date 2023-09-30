@@ -3,7 +3,7 @@ import { useLoader } from "../components/loading";
 
 function getSocket() {
     //const baseUrl = "https://localhost:44345/api/"
-    const baseUrl = "https://trevo.space/api/"
+    const baseUrl = "https://api-server.shop/api/"
     const localAuth = localStorage.getItem('token');
     const auth = localAuth ? localAuth : '';
 
@@ -11,7 +11,7 @@ function getSocket() {
         baseURL: baseUrl,
         headers: {
             Authorization: `Bearer ${auth}`,
-            apiKey: "83f57599-d1c9-4ba8-88bf-1551cdaa5a9d"
+            apiKey: "7b7a3ecb-245a-49a2-87ae-d54734353515"
         }
     })
 }
