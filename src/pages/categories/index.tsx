@@ -37,7 +37,7 @@ export function Categories() {
                 {categories.map((category, index) => (
                     <S.ContainerCategoriesItem key={index}>
                         <Title text={category.description} fontSize="16px" />
-                        <IconButton edge="end" onClick={() => navigate(`categories-view/${category.id}`)} >
+                        <IconButton edge="end" onClick={() => navigate(`/categories/view/${category.id}`)} >
                             <SvgIcon>
                                 <NavigateNextIcon />
                             </SvgIcon>

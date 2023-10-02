@@ -11,21 +11,25 @@ const lis = [
     icon: <AccountCircleIcon />,
     title: "Conta",
     path: "/account",
+    value: "account"
   },
   {
     icon: <FavoriteIcon />,
     title: "Favoritos",
     path: "/favorites",
+    value: "favorites"
   },
   {
     icon: <HomeIcon />,
     title: "Home",
     path: "/",
+    value: ""
   },
   {
     icon: <CategoryIcon />,
     title: "Categorias",
     path: "/categories",
+    value: "categories"
   },
 ];
 
@@ -33,7 +37,7 @@ export default function NavBottomNavigation() {
 
   const themeApp = useThemeApp();
   const navigate = useNavigate();
-  const path = window.location.pathname;
+  const path = window.location.pathname.split('/');
 
   function handleNavigate(path: string){
     navigate(path)
@@ -45,15 +49,15 @@ export default function NavBottomNavigation() {
         {lis.map((item, index) => (
           <S.NavLi key={index}>
             <S.ContainerIcon
-              backGroud={item.path === path ? themeApp.color.pink : "tranparent"}
-              top={item.path === path ? "-33px" : "0"}
-              borderRadius={item.path === path ? "50%" : "0"}
-              border={item.path === path ? `5px solid ${themeApp.color.gray}` : "0"}
+              backGroud={item.value === path[1] ? themeApp.color.pink : "tranparent"}
+              top={item.value === path[1] ? "-33px" : "0"}
+              borderRadius={item.value === path[1] ? "50%" : "0"}
+              border={item.value === path[1] ? `5px solid ${themeApp.color.gray}` : "0"}
               onClick={() => handleNavigate(item.path)}
             >
               {item.icon}
             </S.ContainerIcon>
-            <S.Text display={item.path === path ? "block" : "none"} color={themeApp.color.pink}>
+            <S.Text display={item.value === path[1] ? "block" : "none"} color={themeApp.color.pink}>
               {item.title}
             </S.Text>
           </S.NavLi>

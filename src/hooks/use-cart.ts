@@ -32,7 +32,7 @@ export function useCart(){
         localStorage.setItem('cart', JSON.stringify(cart))
     }
 
-    function getCart(){
+    function getCart(): any[]{
 
         const storage = localStorage.getItem('cart');
 
@@ -44,7 +44,7 @@ export function useCart(){
         return [];
     }
 
-    function getLengthCart(){
+    function getLengthCart(): number{
         let storage = localStorage.getItem('cart');
 
         let cart = !storage ? [] : JSON.parse(storage);
