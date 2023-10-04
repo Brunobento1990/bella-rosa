@@ -1,5 +1,3 @@
-import { updateCart } from "../components/header";
-
 export function useCart(){
     function setCart(productId: string, quantidade: number) {
 
@@ -27,7 +25,7 @@ export function useCart(){
             cart.push(produtoCart);
         }
 
-        updateCart(cart.length)
+        //updateCart(cart.length)
 
         localStorage.setItem('cart', JSON.stringify(cart))
     }
