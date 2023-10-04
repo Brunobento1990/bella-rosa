@@ -12,6 +12,7 @@ interface propsInputCustom {
   helperText?: React.ReactNode;
   name: string;
   maxLength?: number;
+  id: string;
 }
 
 export function InputCustom(props: propsInputCustom) {
@@ -19,7 +20,7 @@ export function InputCustom(props: propsInputCustom) {
     <TextField
       helperText={props.helperText}
       error={props.error}
-      id="standard-basic"
+      id={props.id}
       label={props.label}
       variant="standard"
       fullWidth={props.fullWidth}

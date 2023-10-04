@@ -4,8 +4,12 @@ import { ContainerPage } from "../../layout/styles";
 import * as S from "./styles";
 import * as config from "./config";
 import { ButtonCustom } from "../../components/buuton";
+import { useApi } from "../../hooks/use-api";
+import { useNavigate } from "react-router-dom";
 
 export function Login() {
+  const { post } = useApi();
+  const navige = useNavigate();
   const formik = useFormik({
     initialValues: config.initialValues,
     validationSchema: config.validationSchema,
@@ -14,7 +18,8 @@ export function Login() {
 
   async function submit(values: any, helpers: any) {
     try {
-      //api.login(values)
+      await post("login-client", values);
+      navige('/')
     } catch (err: any) {
       helpers.setStatus({ success: false });
       helpers.setErrors({ submit: err.message });
@@ -22,12 +27,13 @@ export function Login() {
     }
   }
 
+  console.log(formik.values);
+
   return (
     <ContainerPage>
-      <S.ContainerInputsLogin
-        onSubmit={formik.handleSubmit}
-      >
+      <S.ContainerInputsLogin onSubmit={formik.handleSubmit}>
         <InputCustom
+          id="email"
           name="email"
           helperText={formik.touched.email && formik.errors.email}
           error={!!(formik.touched.email && formik.errors.email)}
@@ -39,6 +45,7 @@ export function Login() {
           value={formik.values.email}
         />
         <InputCustom
+          id="password"
           name="password"
           helperText={formik.touched.password && formik.errors.password}
           error={!!(formik.touched.password && formik.errors.password)}
