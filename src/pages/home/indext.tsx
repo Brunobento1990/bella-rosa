@@ -14,13 +14,13 @@ export function Home() {
   const [products, setProducts] = useState<Product[]>([]);
   const [promotions, setPromotions] = useState<IPromotion[]>([]);
   const themeApp = useThemeApp();
-  const api = useApi();
+  const { get } = useApi();
 
   useEffect(() => {
     const init = async () => {
-      const responseBanner = await api.get("list-banner");
-      const responseProduct = await api.get("list-product");
-      const responsePromotion = await api.get("list-promotion");
+      const responseBanner = await get("list-banner");
+      const responseProduct = await get("list-product");
+      const responsePromotion = await get("list-promotion");
       if (responseBanner) {
         setBannres(responseBanner);
       }
