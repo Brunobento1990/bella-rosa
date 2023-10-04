@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import NavBottomNavigation from '../components/nav';
-import { Header } from '../components/header';
 
 interface PropsLayout {
     children: React.ReactNode;
@@ -17,7 +16,6 @@ export function Layout(props: PropsLayout) {
                 overflow: 'hidden auto'
             }}
         >
-            <Header />
             {props.children}
             <NavBottomNavigation />
         </motion.div>
