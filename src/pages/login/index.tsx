@@ -6,9 +6,11 @@ import * as config from "./config";
 import { ButtonCustom } from "../../components/buuton";
 import { useApi } from "../../hooks/use-api";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../hooks/use-auth";
 
 export function Login() {
   const { post } = useApi();
+  const { setToken } = useAuth();
   const navige = useNavigate();
   const formik = useFormik({
     initialValues: config.initialValues,
@@ -18,8 +20,9 @@ export function Login() {
 
   async function submit(values: any, helpers: any) {
     try {
-      await post("login-client", values);
-      navige('/')
+      const response = await post("login-client", values);
+      setToken(response.token)
+      navige("/");
     } catch (err: any) {
       helpers.setStatus({ success: false });
       helpers.setErrors({ submit: err.message });
